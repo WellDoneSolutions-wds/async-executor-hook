@@ -35,29 +35,32 @@ export const useAsyncConcurrentExecutor = <P, D>(
     };
   }, [asyncExecutor.execution$]);
 
-  const isLoadingRef = useRef((key: string) => asyncExecutor.isLoading(key));
+  const isLoadingRef = useRef(asyncExecutor.isLoading);
   const isLoading = isLoadingRef.current;
 
-  const isErrorRef = useRef((key: string) => asyncExecutor.isError(key));
+  const isErrorRef = useRef(asyncExecutor.isError);
   const isError = isErrorRef.current;
 
-  const isSuccessRef = useRef((key: string) => asyncExecutor.isSuccess(key));
+  const isSuccessRef = useRef(asyncExecutor.isSuccess);
   const isSuccess = isSuccessRef.current;
 
-  const dataRef = useRef((key: string) => asyncExecutor.data(key));
+  const dataRef = useRef(asyncExecutor.data);
   const data = dataRef.current;
 
-  const errorRef = useRef((key: string) => asyncExecutor.error(key));
+  const errorRef = useRef(asyncExecutor.error);
   const error = errorRef.current;
 
-  const errorsRef = useRef((key: string) => asyncExecutor.errors(key));
+  const errorsRef = useRef(asyncExecutor.errors);
   const errors = errorsRef.current;
 
-  const statusRef = useRef((key: string) => asyncExecutor.status(key));
+  const statusRef = useRef(asyncExecutor.status);
   const status = statusRef.current;
 
-  const executionRef = useRef((key: string) => asyncExecutor.getExecution(key));
+  const executionRef = useRef(asyncExecutor.getExecution);
   const execution = executionRef.current;
+
+  const setDataRef = useRef(asyncExecutor.setData);
+  const setData = setDataRef.current;
 
   return {
     executions: asyncExecutor.executions,
@@ -70,5 +73,6 @@ export const useAsyncConcurrentExecutor = <P, D>(
     errors,
     execution,
     execute,
+    setData,
   };
 };

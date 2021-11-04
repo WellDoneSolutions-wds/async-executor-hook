@@ -11,6 +11,7 @@ export interface IAsyncConcurrentExecutor<P, D> {
   errors: (key: string) => any[] | undefined;
   execution: (key: string) => Execution<P, D>;
   execute: (params: P) => Execution<P, D>;
+  setData: (key: string, data: D | ((prev: D) => D)) => void;
 }
 
 export interface IAsyncExecutor<P, D> {
@@ -26,5 +27,5 @@ export interface IAsyncExecutor<P, D> {
   execute: (params: P) => void;
   getExecution: () => Execution<P, D>;
   retry: () => void;
-  setData: (data: D) => void;
+  setData: (data: D | ((prev: D) => D)) => void;
 }

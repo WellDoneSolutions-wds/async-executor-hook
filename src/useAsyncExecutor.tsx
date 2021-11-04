@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import {
   Execution,
-  RxExecutor,
   IRxExecuteFn,
   IRxExecutorConfig,
-  EnumStatusType,
+  RxExecutor,
 } from "rx-executor";
 import { IAsyncExecutor } from "./model";
 
@@ -34,7 +33,7 @@ export const useAsyncExecutor = <P, D>(
   const retryRef = useRef(asyncExecutor.retry);
   const retry = retryRef.current;
 
-  const setDataRef = useRef(execution.setData);
+  const setDataRef = useRef(asyncExecutor.setData);
   const setData = setDataRef.current;
 
   useEffect(() => {
