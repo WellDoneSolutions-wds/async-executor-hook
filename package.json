@@ -1,6 +1,6 @@
 {
   "name": "async-executor-hook",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React hook. Based on rxjs. Encapsulate all the boilerplate code necesary to execute an async operations. Support concurrency executions: MergeMap, SwitchMap, ConcatMap, ExhaustMap. Also a retry mechanisim. All  described is posible via configuration. ",
   "main": "./lib/index.js",
   "types": "./es/index.d.ts",
@@ -30,7 +30,7 @@
   },
   "peerDependencies": {
     "react": "^16.8.3 || ^17 || ^18",
-    "rxjs": "^6.0.0"
+    "rxjs": "^6.5.3 || ^7.4.0"
   },
   "peerDependenciesMeta": {
     "react-dom": {
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.1",
-    "rx-executor": "0.0.5"
+    "rx-executor": "0.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
