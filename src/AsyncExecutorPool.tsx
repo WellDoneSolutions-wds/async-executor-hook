@@ -22,8 +22,6 @@ export const AsyncExecutorPoolProvider: FC<IAsyncExecutorPoolProvider> = ({
 }) => {
   const executorRef = useRef<{ [key: string]: RxExecutor2<any, any> }>({});
 
-  const [, forceUpdate] = useReducer((x) => x + 1, 0);
-
   return (
     <AsyncExecutorPoolContext.Provider
       value={{
@@ -32,7 +30,6 @@ export const AsyncExecutorPoolProvider: FC<IAsyncExecutorPoolProvider> = ({
         },
         addExecutor: (key, executor) => {
           executorRef.current[key] = executor;
-          forceUpdate();
         },
       }}
     >

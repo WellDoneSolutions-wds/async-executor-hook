@@ -1,6 +1,6 @@
 {
   "name": "async-executor-hook",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React hook. Based on rxjs. Encapsulate all the boilerplate code necesary to execute an async operations. Support concurrency executions: MergeMap, SwitchMap, ConcatMap, ExhaustMap. Also a retry mechanisim. All  described is posible via configuration. ",
   "main": "./lib/index.js",
   "types": "./es/index.d.ts",
